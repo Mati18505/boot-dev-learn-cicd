@@ -9,7 +9,7 @@ import (
 
 func TestGetAPIKey(t *testing.T) {
 	h := make(http.Header)
-	
+
 	h.Add("Authorization", "ApiKey 1234")
 
 	_, err := GetAPIKey(h)
@@ -28,7 +28,7 @@ func TestGetApiKeyNoAuthHeader(t *testing.T) {
 
 func TestGetApiKeyMallformed(t *testing.T) {
 	h := make(http.Header)
-	
+
 	h.Add("Authorization", "ApiKey ")
 
 	_, err := GetAPIKey(h)
